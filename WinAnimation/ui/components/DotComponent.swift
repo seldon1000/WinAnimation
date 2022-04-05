@@ -32,15 +32,15 @@ struct DotComponent: View {
                 withAnimation(.easeInOut) {
                     if dot.isObstacle {
                         isObstacle = true
+                    }
+                }
+            }
+            .onChange(of: win) { newValue in
+                if dot.isObstacle && newValue {
+                    withAnimation(.easeInOut.delay(.random(in: 0.5...1.5))) {
+                        isObstacle = false
+                    }
                 }
             }
     }
-        .onChange(of: win) { newValue in
-            if dot.isObstacle && newValue {
-                withAnimation(.easeInOut.delay(.random(in: 0.5...1.5))) {
-                    isObstacle = false
-                }
-            }
-        }
-}
 }
