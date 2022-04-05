@@ -21,9 +21,7 @@ And now comes the dirty work. We're gonna reuse components from the other animat
             win.toggle()
                         
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                withAnimation(.easeInOut) {    
-                    grid.resetGrid()
-                }
+                grid.resetGrid()
             }
         }
     }
