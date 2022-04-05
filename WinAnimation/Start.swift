@@ -30,9 +30,7 @@ struct Start: View {
                         win.toggle()
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                            withAnimation(.easeInOut) {
-                                grid.resetGrid()
-                            }
+                            grid.resetGrid()
                         }
                     }
                 }
